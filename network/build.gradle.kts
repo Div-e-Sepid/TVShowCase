@@ -23,15 +23,18 @@ android {
 }
 
 dependencies {
-    api(project(":domain"))
+    api(project(":data"))
 
-    api(Dependency.AndroidX.coreKtx)
-    api(Dependency.AndroidX.appCompat)
-    api(Dependency.AndroidX.activity)
-    api(Dependency.AndroidX.fragment)
-    api(Dependency.AndroidX.constraintLayout)
+    api(Dependency.Square.OkHttp.okhttp)
+    api(Dependency.Square.OkHttp.loggingInterceptor)
 
-    api(Dependency.Google.Hilt.android)
+    api(Dependency.Square.Retrofit.retrofit)
+    api(Dependency.Square.Retrofit.moshiConverter)
 
-    api(Dependency.Google.material)
+    api(Dependency.Square.Moshi.moshi)
+    kapt(Dependency.Square.Moshi.codeGen)
+
+    testImplementation(Dependency.junit)
+    testImplementation(Dependency.Kotlin.Coroutines.test)
+    androidTestImplementation(Dependency.AndroidX.Test.ext)
 }

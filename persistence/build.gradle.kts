@@ -23,15 +23,14 @@ android {
 }
 
 dependencies {
-    api(project(":domain"))
+    api(project(":data"))
 
-    api(Dependency.AndroidX.coreKtx)
-    api(Dependency.AndroidX.appCompat)
-    api(Dependency.AndroidX.activity)
-    api(Dependency.AndroidX.fragment)
-    api(Dependency.AndroidX.constraintLayout)
+    api(Dependency.AndroidX.Room.runtime)
+    api(Dependency.AndroidX.Room.ktx)
+    kapt(Dependency.AndroidX.Room.compiler)
+    testImplementation(Dependency.AndroidX.Room.testing)
 
-    api(Dependency.Google.Hilt.android)
-
-    api(Dependency.Google.material)
+    testImplementation(Dependency.junit)
+    testImplementation(Dependency.Kotlin.Coroutines.test)
+    androidTestImplementation(Dependency.AndroidX.Test.ext)
 }

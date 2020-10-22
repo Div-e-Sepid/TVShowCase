@@ -1,5 +1,7 @@
 include(":app")
 include(":domain")
 include(":data")
+include(":persistence")
+include(":network")
 include(":presentation")
 include(":ui-main")

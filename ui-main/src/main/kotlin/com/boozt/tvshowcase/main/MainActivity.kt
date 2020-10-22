@@ -1,5 +1,7 @@
 package com.boozt.tvshowcase.main
 
 import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity: AppCompatActivity()
+@AndroidEntryPoint
+class MainActivity : AppCompatActivity()
