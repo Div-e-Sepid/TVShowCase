@@ -14,5 +14,5 @@ class SeasonRemoteDataSourceImpl(
     override suspend fun get(): NetworkResponse<List<Model.Season>> =
         execute {
             showApi.getShows()
-        }.map(List<Dto.Show>::mapToModel)
+        }.map(Dto.Show::mapToModel)
 }

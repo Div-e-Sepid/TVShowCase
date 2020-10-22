@@ -8,6 +8,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Singleton
 
 @Module
@@ -16,7 +17,7 @@ class PersistenceModule {
 
     @Singleton
     @Provides
-    fun tvShowCaseDatabase(context: Context): TvShowCaseDatabase =
+    fun tvShowCaseDatabase(@ApplicationContext context: Context): TvShowCaseDatabase =
         Room.databaseBuilder(
             context,
             TvShowCaseDatabase::class.java, "database.db"

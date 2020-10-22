@@ -31,7 +31,5 @@ dependencies {
     api(Dependency.AndroidX.fragment)
     api(Dependency.AndroidX.constraintLayout)
 
-    api(Dependency.Google.Hilt.android)
-
     api(Dependency.Google.material)
 }

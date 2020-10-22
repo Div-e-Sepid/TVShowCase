@@ -38,7 +38,7 @@ sealed class Table {
         @ColumnInfo(name = "meta_score") val metaScore: String,
         @ColumnInfo(name = "response") val response: String,
         @ColumnInfo(name = "year") val year: String,
-        @Embedded(prefix = "ratings") val ratings: Ratings
+        @Embedded(prefix = "ratings_") val ratings: Ratings
     ) : Table()
 
     data class Ratings(

@@ -17,9 +17,9 @@ inline fun <T> execute(request: () -> Response<T>): NetworkResponse<T> =
         NetworkResponse.Error(ex)
     }
 
-fun List<Dto.Show>.mapToModel(): List<Model.Season> {
+fun Dto.Show.mapToModel(): List<Model.Season> {
     val mutableSeasons = mutableListOf<Model.Season>()
-    this[0].seasons.forEachIndexed { index, season ->
+    seasons.forEachIndexed { index, season ->
         mutableSeasons.add(
             Model.Season(
                 title = index.toString(),
@@ -55,10 +55,10 @@ fun Dto.Episode.mapToModel() = Model.Episode(
     metaScore = metaScore,
     response = response,
     year = year,
-    ratings = ratings.mapToModel()
+    ratings = ratings[0].mapToModel()
 )
 
-fun Dto.Ratings.mapToModel() = Model.Ratings(
+fun Dto.Rating.mapToModel() = Model.Ratings(
     source = source,
     value = value
 )

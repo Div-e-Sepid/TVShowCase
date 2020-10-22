@@ -41,11 +41,11 @@ sealed class Dto {
         @Json(name = "Metascore") val metaScore: String,
         @Json(name = "Response") val response: String,
         @Json(name = "Year") val year: String,
-        @Json(name = "Ratings") val ratings: Ratings
+        @Json(name = "Ratings") val ratings: List<Rating>
     ) : Dto()
 
     @JsonClass(generateAdapter = true)
-    data class Ratings(
+    data class Rating(
         @Json(name = "Source") val source: String,
         @Json(name = "Value") val value: String
     ) : Dto()

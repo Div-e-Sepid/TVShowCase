@@ -1,7 +1,9 @@
 plugins {
     id("com.android.library")
+    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -24,6 +26,9 @@ android {
 dependencies {
     api(project(":presentation"))
     api(project(":domain"))
+
+    implementation(Dependency.Google.Hilt.android)
+    kapt(Dependency.Google.Hilt.compiler)
 
     testImplementation(Dependency.junit)
     androidTestImplementation(Dependency.AndroidX.Test.ext)
