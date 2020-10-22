@@ -31,5 +31,8 @@ dependencies {
     api(Dependency.AndroidX.fragment)
     api(Dependency.AndroidX.constraintLayout)
 
+    api(Dependency.AndroidX.Navigation.fragmentKtx)
+    api(Dependency.AndroidX.Navigation.uiKtx)
+
     api(Dependency.Google.material)
 }

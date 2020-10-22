@@ -1,10 +1,12 @@
 private const val KOTLIN_VERSION = "1.4.10"
 private const val HILT_VERSION = "2.28-alpha"
+private const val NAVIGATION_VERSION = "2.3.1"
 
 object Plugin {
     const val android = "com.android.tools.build:gradle:4.1.0"
     const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
     const val hilt = "com.google.dagger:hilt-android-gradle-plugin:$HILT_VERSION"
+    const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:$NAVIGATION_VERSION"
 }
 
 object Version {
@@ -42,6 +44,11 @@ object Dependency {
             const val compiler = "androidx.room:room-compiler:$ROOM_VERSION"
             const val ktx = "androidx.room:room-ktx:$ROOM_VERSION"
             const val testing = "androidx.room:room-testing:$ROOM_VERSION"
+        }
+
+        object Navigation {
+            const val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$NAVIGATION_VERSION"
+            const val uiKtx = "androidx.navigation:navigation-ui-ktx:$NAVIGATION_VERSION"
         }
 
         object Test {

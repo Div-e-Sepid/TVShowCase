@@ -9,6 +9,7 @@ buildscript {
         classpath(Plugin.android)
         classpath(Plugin.kotlin)
         classpath(Plugin.hilt)
+        classpath(Plugin.safeArgs)
     }
 }
 

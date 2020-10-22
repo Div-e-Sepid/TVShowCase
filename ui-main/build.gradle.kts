@@ -1,9 +1,10 @@
 plugins {
     id("com.android.library")
-    id("dagger.hilt.android.plugin")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+    id("androidx.navigation.safeargs.kotlin")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -20,6 +21,10 @@ android {
         getByName("main").java.srcDirs("src/main/kotlin")
         getByName("androidTest").java.srcDirs("src/androidTest/kotlin")
         getByName("test").java.srcDirs("src/test/kotlin")
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 }
 
