@@ -48,7 +48,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
@@ -59,6 +59,9 @@ dependencies {
 
     implementation(Dependency.Google.Hilt.android)
     kapt(Dependency.Google.Hilt.compiler)
+
+    implementation(Dependency.AndroidX.Hilt.lifecycle)
+    kapt(Dependency.AndroidX.Hilt.compiler)
 
     testImplementation(Dependency.junit)
     testImplementation(Dependency.Kotlin.Coroutines.test)

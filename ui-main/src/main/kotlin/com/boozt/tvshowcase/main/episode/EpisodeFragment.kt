@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.boozt.tvshowcase.main.databinding.FragmentEpisodeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EpisodeFragment : Fragment() {
 
     private var binding: FragmentEpisodeBinding? = null

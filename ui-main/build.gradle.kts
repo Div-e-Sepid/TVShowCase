@@ -26,6 +26,15 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -34,6 +43,10 @@ dependencies {
 
     implementation(Dependency.Google.Hilt.android)
     kapt(Dependency.Google.Hilt.compiler)
+
+
+    implementation(Dependency.AndroidX.Hilt.lifecycle)
+    kapt(Dependency.AndroidX.Hilt.compiler)
 
     testImplementation(Dependency.junit)
     androidTestImplementation(Dependency.AndroidX.Test.ext)
