@@ -1,1 +1,5 @@
 include(":app")
+include(":domain")
+include(":data")
+include(":presentation")
+include(":ui-main")

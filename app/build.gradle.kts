@@ -51,15 +51,10 @@ android {
 }
 
 dependencies {
-    implementation(Dependency.Kotlin.stdLib)
-    implementation(Dependency.Kotlin.Coroutines.android)
-    testImplementation(Dependency.Kotlin.Coroutines.test)
-
-    implementation(Dependency.AndroidX.coreKtx)
-    implementation(Dependency.AndroidX.appCompat)
-    implementation(Dependency.AndroidX.material)
-    androidTestImplementation(Dependency.AndroidX.Test.ext)
-    androidTestImplementation(Dependency.AndroidX.Test.espressoCore)
+    api(project(":ui-main"))
 
     testImplementation(Dependency.junit)
+    testImplementation(Dependency.Kotlin.Coroutines.test)
+    androidTestImplementation(Dependency.AndroidX.Test.ext)
+    androidTestImplementation(Dependency.AndroidX.Test.espressoCore)
 }
