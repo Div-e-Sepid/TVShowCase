@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.boozt.tvshowcase.presentation">
+
+    <application android:theme="@style/Theme.TVShowCase" />
+
+</manifest>

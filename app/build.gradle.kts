@@ -51,7 +51,7 @@ android {
 }
 
 dependencies {
-    api(project(":ui-main"))
+    implementation(project(":ui-main"))
 
     testImplementation(Dependency.junit)
     testImplementation(Dependency.Kotlin.Coroutines.test)
