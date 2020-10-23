@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.boozt.tvshowcase.main.databinding.FragmentEpisodeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+// Fixme: Couldn't finish UI of these screens! SORRY
 @AndroidEntryPoint
 class EpisodeFragment : Fragment() {
 
