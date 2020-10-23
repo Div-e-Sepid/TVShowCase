@@ -61,6 +61,7 @@ class OverviewFragment : Fragment() {
     private fun onItemClick(season: Model.Season) {
         val directions = OverviewFragmentDirections.navigateToSeason(season.title)
         findNavController().navigate(directions)
+        // TODO: Add shared view support
     }
 
     private fun onRefresh() {
