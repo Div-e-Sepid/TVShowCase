@@ -5,7 +5,7 @@ A simple flow of data/input is as follows:
 
 ![The architectural layers](/architecture.png "The architectural layers")
 
-#Modules
+## Modules
 The project is modular to decouple the logic as much as possible:
 
 ## domain
@@ -33,6 +33,7 @@ The common code between ui modules is in this module and is shared between them.
 This is a ui module that has a host activity with some fragments inside.
 Each ui-*** module only depends on `presentation` module and `domain`,
 this way the `Room` and `Retrofit` are not even accessible on view layer!
+The `ViewModels`s are also here. Each ViewModel will expose the ui state using a single `LiveData`.
 
 #app
 This is the module that has access to all other modules to build the project and mostly contains of
