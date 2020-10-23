@@ -8,8 +8,8 @@
 
     <fragment
         android:id="@+id/overviewFragment"
-        tools:layout="@layout/fragment_overview"
-        android:name="com.boozt.tvshowcase.main.overview.OverviewFragment">
+        android:name="com.boozt.tvshowcase.main.overview.OverviewFragment"
+        tools:layout="@layout/fragment_overview">
 
         <action
             android:id="@+id/navigateToSeason"
@@ -23,8 +23,8 @@
 
     <fragment
         android:id="@+id/seasonFragment"
-        tools1:layout="@layout/fragment_season"
-        android:name="com.boozt.tvshowcase.main.season.SeasonFragment" >
+        android:name="com.boozt.tvshowcase.main.season.SeasonFragment"
+        tools1:layout="@layout/fragment_season">
 
         <action
             android:id="@+id/navigateToEpisode"
@@ -34,12 +34,22 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
+        <argument
+            android:name="seasonTitle"
+            app:argType="string" />
+
     </fragment>
 
     <fragment
         android:id="@+id/episodeFragment"
-        tools2:layout="@layout/fragment_episode"
-        android:name="com.boozt.tvshowcase.main.episode.EpisodeFragment" />
+        android:name="com.boozt.tvshowcase.main.episode.EpisodeFragment"
+        tools2:layout="@layout/fragment_episode">
+
+        <argument
+            android:name="episodeTitle"
+            app:argType="string" />
+
+    </fragment>
 
 
 </navigation>
