@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.boozt.tvshowcase.domain.Model
+import com.boozt.tvshowcase.domain.NetworkResponse
 import com.boozt.tvshowcase.main.databinding.FragmentOverviewBinding
+import com.boozt.tvshowcase.presentation.showSnackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -33,6 +35,11 @@ class OverviewFragment : Fragment() {
             adapter = seasonsAdapter
         }
 
+        binding!!.swipeRefreshLayout.apply {
+            isRefreshing = true
+            setOnRefreshListener(::onRefresh)
+        }
+
         overviewViewModel.uiModel.observe(this.viewLifecycleOwner, ::onUiModel)
     }
 
@@ -43,10 +50,20 @@ class OverviewFragment : Fragment() {
 
     private fun onUiModel(uiModel: OverviewUiModel) {
         seasonsAdapter.submitList(uiModel.seasons)
+        uiModel.refreshEvent?.getContentIfNotHandled()?.let {
+            binding!!.swipeRefreshLayout.isRefreshing = false
+            if (it !is NetworkResponse.Success) {
+                binding!!.root.showSnackbar("Error! Try again")
+            }
+        }
     }
 
     private fun onItemClick(season: Model.Season) {
         val directions = OverviewFragmentDirections.navigateToSeason(season.title)
         findNavController().navigate(directions)
+    }
+
+    private fun onRefresh() {
+        overviewViewModel.refresh()
     }
 }

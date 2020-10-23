@@ -37,6 +37,7 @@ object Dependency {
         const val activity = "androidx.activity:activity-ktx:1.1.0"
         const val fragment = "androidx.fragment:fragment-ktx:1.2.5"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.2"
+        const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
         object Room {
             private const val version = "2.2.5"

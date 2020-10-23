@@ -30,6 +30,7 @@ dependencies {
     api(Dependency.AndroidX.activity)
     api(Dependency.AndroidX.fragment)
     api(Dependency.AndroidX.constraintLayout)
+    api(Dependency.AndroidX.swipeRefreshLayout)
 
     api(Dependency.AndroidX.Navigation.fragmentKtx)
     api(Dependency.AndroidX.Navigation.uiKtx)
